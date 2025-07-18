@@ -1,13 +1,11 @@
 import { GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
-import React from "react";
 import "../style/OAuth.css";
 
-const OAuth = (authenticated, setAuthenticated) => {
+const OAuth = (authenticated) => {
 
-  function handleSuccessfulLogin(credentialResponse) {
+  function handleSuccessfulLogin() {
+    console.log(authenticated)
     authenticated.setAuthenticated(true);
-
   }
   return (
     <div className="OAuth">
@@ -15,6 +13,9 @@ const OAuth = (authenticated, setAuthenticated) => {
         onSuccess={handleSuccessfulLogin}
         onError={() => console.log("error")}
         auto_select={true}
+        text= "signin_with"
+        shape= "rectangular"
+        width="300px"
       />
     </div>
   );
