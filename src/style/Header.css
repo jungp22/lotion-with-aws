@@ -1,0 +1,47 @@
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: space-between;
+  text-align: center;
+  border-top: 3px solid #4d455d;
+  border-bottom: 2px solid #f6f6f6;
+  width: 100%;
+}
+
+.Header h1 {
+  margin: 8px 0px 0px;
+}
+
+.Header p {
+  margin: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  color: gray;
+  margin-bottom: 5px;
+}
+.Header button {
+  background-color: white;
+  border: none;
+  width: 64px;
+}
+
+.Header button:hover {
+  background-color: #4d455d;
+  color: white;
+  cursor: pointer;
+}
+
+.Header button#Title {
+  width:100%;
+  color:black;
+  background-color: white;
+}
+
+.Header .cooldiv {
+  width: 70px;
+}
+.Header img {
+  width: 20px;
+}

@@ -1,0 +1,63 @@
+.EmptyNote {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  color: gray;
+  flex: 5;
+  height: 100%;
+}
+.EmptyNote p {
+  font-size: 50px;
+}
+
+.quill {
+  width: 100%;
+  height: calc(100% - 110px);
+}
+
+.Note {
+  align-items: flex-start;
+  justify-items: center;
+  flex: 5;
+  height: 100%;
+}
+
+.NoteHeader {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid #f6f6f6;
+}
+
+.NoteTitleButtons button {
+  background-color: white;
+  border: none;
+  width: 64px;
+  height: 67px;
+}
+
+.NoteTitleButtons button:hover {
+  background-color: #4d455d;
+  color: white;
+}
+.NoteTitle {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px 10px 20px;
+}
+.NoteTitle input {
+  border: none;
+}
+
+.NoteContent {
+  margin:20px;
+}
+
+#EditTitle{
+  font-size: 24px;
+}
+
+.NoteTitle input:focus{
+  outline:none;
+}

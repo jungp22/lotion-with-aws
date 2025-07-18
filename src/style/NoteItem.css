@@ -1,0 +1,22 @@
+.NoteItem {
+  border-bottom: 2px solid #f6f6f6;
+  width: 100%;
+  background-color: white;
+  border: none;
+  text-align: left;
+    padding: 10px;
+
+}
+
+.NoteItem:hover{
+  background-color: #4d455d;
+  color: white;
+  cursor: pointer;
+
+}
+.NoteItem p{
+  color: gray;
+}
+.NoteItem .content{
+  margin-top: 10px;
+}
