@@ -5,7 +5,9 @@ const OAuth = (authenticated) => {
 
   function handleSuccessfulLogin() {
     console.log(authenticated)
-    authenticated.setAuthenticated(true);
+    authenticated.setAuthenticated("true");
+    localStorage.setItem("authenticated","true");
+
   }
   return (
     <div className="OAuth">

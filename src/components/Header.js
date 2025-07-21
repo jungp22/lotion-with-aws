@@ -1,7 +1,7 @@
 import "../style/Header.css";
 import hamburger from "../data/image.png";
 import { useNavigate } from "react-router-dom";
-const Header = ({ toggleList }) => {
+const Header = ({ toggleList, logOut }) => {
   let navigate = useNavigate();
 
   return (
@@ -15,7 +15,7 @@ const Header = ({ toggleList }) => {
         </button>
         <p>Like notion but worse</p>
       </div>
-      <div className="cooldiv"></div>
+      <button className="cooldiv" onClick={logOut}>Log out</button>
     </div>
   );
 };

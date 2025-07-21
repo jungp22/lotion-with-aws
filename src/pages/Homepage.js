@@ -13,7 +13,7 @@ const Homepage = () => {
 
   const [showNoteList, setShowNoteList] = useState("true");
   const [noteItems, setNoteItems] = useState([]);
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState("false");
 
   function toggleList() {
     const newShowList = showNoteList === "true" ? "false" : "true";
@@ -24,13 +24,11 @@ const Homepage = () => {
   useEffect(() => {
     const savedNoteList = localStorage.getItem("showNoteList");
     const savedNoteItems = JSON.parse(localStorage.getItem("noteItems"));
-    const savedAuthentication = JSON.parse(
-      localStorage.getItem("authenticated")
-    );
+    const savedAuthentication = localStorage.getItem("authenticated");
 
     setShowNoteList(savedNoteList ? savedNoteList : "true");
     setNoteItems(savedNoteItems ? savedNoteItems : []);
-    setAuthenticated(savedAuthentication ? savedAuthentication : false);
+    setAuthenticated(savedAuthentication ? savedAuthentication : "false");
   }, []);
 
   function addNote() {
@@ -50,14 +48,16 @@ const Homepage = () => {
   }
   function logOut() {
     googleLogout();
+    localStorage.setItem("authenticated", "false");
+    setAuthenticated("false");
   }
 
   return (
     <div className="page">
-      <Header toggleList={toggleList} />
+      <Header toggleList={toggleList} logOut={logOut} />
 
       <div className="main">
-        {authenticated && (
+        {(authenticated === "true") && (
           <>
             <NoteList
               showNoteList={showNoteList}
@@ -68,9 +68,12 @@ const Homepage = () => {
             <Outlet />
           </>
         )}
-        {!authenticated && (
+        {(authenticated ==="false") &&(
           <>
-            <OAuth authenticated = {authenticated} setAuthenticated = {setAuthenticated}/>
+            <OAuth
+              authenticated={authenticated}
+              setAuthenticated={setAuthenticated}
+            />
           </>
         )}
       </div>
