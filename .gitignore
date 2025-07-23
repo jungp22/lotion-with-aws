@@ -22,3 +22,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# others
+terraform*
+.terraform*
+.pytest_cache
+__pycache__
